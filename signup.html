@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account</title>
+
+  <!-- Irish Grover font -->
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="src/style.css" />
+</head>
+<body>
+
+  <!-- Page loader -->
+  <div id="page-loader">
+    <div class="loader-text">Loading...</div>
+  </div>
+
+  <!-- Three.js background -->
+  <div id="app"></div>
+
+  <div class="login-overlay">
+    <div class="login-panel">
+      <h1>Create Account</h1>
+
+      <form id="signup-form" method="POST" action="/auth/signup">
+        <!-- Username -->
+        <div class="input-icon">
+          <i class="fa fa-user"></i>
+          <input type="text" name="username" placeholder="Username" required autocomplete="off" translate="no"/>
+        </div>
+
+        <!-- Email -->
+        <div class="input-icon">
+          <i class="fa fa-envelope"></i>
+          <input type="email" name="email" placeholder="Email" required autocomplete="off" translate="no"/>
+        </div>
+
+        <!-- Mobile -->
+        <div class="input-icon">
+          <i class="fa fa-phone"></i>
+          <input type="tel" name="mobile" placeholder="Mobile Number" required autocomplete="off" translate="no"/>
+        </div>
+
+        <!-- NIC -->
+        <div class="input-icon">
+          <i class="fa fa-id-card"></i>
+          <input type="text" name="nic" placeholder="NIC" required autocomplete="off" translate="no"/>
+        </div>
+
+        <!-- Vehicle -->
+        <div class="input-icon">
+          <i class="fa fa-car"></i>
+          <input type="text" name="vehicle" placeholder="Vehicle Number" required autocomplete="off" translate="no"/>
+        </div>
+
+        <!-- Password -->
+        <div class="input-icon">
+          <i class="fa fa-lock"></i>
+          <input type="password" name="password" placeholder="Password" required autocomplete="new-password" translate="no"/>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-icon">
+          <i class="fa fa-lock"></i>
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" required autocomplete="new-password" translate="no"/>
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Create Account</button>
+        </div>
+      </form>
+
+      <a href="index.html" class="back">← Back to Sign In</a>
+    </div>
+  </div>
+
+  <!-- Three.js script -->
+  <script type="module" src="src/main.js"></script>
+
+  <!-- Loader script (same as Sign In) -->
+  <script>
+    const loader = document.getElementById('page-loader');
+
+    window.addEventListener('load', () => {
+      loader.style.opacity = '0';
+      setTimeout(() => { loader.style.display = 'none'; }, 300);
+    });
+
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href && !href.startsWith('#') && !href.startsWith('javascript')) {
+          loader.style.display = 'flex';
+          loader.style.opacity = '1';
+        }
+      });
+    });
+
+    // Optional: Password match check
+    const form = document.getElementById('signup-form');
+    form.addEventListener('submit', e => {
+      if (form.password.value !== form.confirmPassword.value) {
+        e.preventDefault();
+        alert("Passwords do not match!");
+      }
+    });
+  </script>
+
+</body>
+</html>
