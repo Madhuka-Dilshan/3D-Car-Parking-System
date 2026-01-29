@@ -12,8 +12,8 @@ export function setupUI(callbacks: UICallbacks): void {
   container.style.zIndex = '100';
   container.style.display = 'flex';
   container.style.gap = '10px';
-  
-  /*
+
+  // Utility to create buttons
   const createButton = (text: string, onClick: () => void): HTMLButtonElement => {
     const button = document.createElement('button');
     button.textContent = text;
@@ -25,10 +25,14 @@ export function setupUI(callbacks: UICallbacks): void {
     button.style.cursor = 'pointer';
     button.addEventListener('click', onClick);
     return button;
-  }; */
-  
+  };
 
-  //container.appendChild(createButton('Reset Scene', callbacks.resetScene)); Reset Button in UI
+  // Example button: Reset Scene
+  container.appendChild(createButton('Reset Scene', callbacks.resetScene));
   
+  // You can add more buttons like:
+  // container.appendChild(createButton('Add Cube', callbacks.addCube));
+  // container.appendChild(createButton('Add Sphere', callbacks.addSphere));
+
   document.body.appendChild(container);
 }
