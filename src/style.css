@@ -1,0 +1,196 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global font */
+body {
+  overflow: hidden;
+  font-family: "Irish Grover", cursive;
+}
+
+/* Three.js canvas */
+#app {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Overlay */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto; /* allows vertical scroll if screen is small */
+}
+
+/* Panel */
+.login-panel {
+  width: 480px; 
+  max-width: 100%;
+  max-height: 90vh; 
+  padding: 48px 36px; 
+  background: rgba(220, 220, 220, 0.55);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  border-radius: 14px;
+  overflow-y: auto; 
+}
+
+/* Scrollbar - Webkit */
+.login-panel::-webkit-scrollbar {
+  width: 10px;
+}
+.login-panel::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+.login-panel::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 5px;
+  border: 2px solid rgba(0,0,0,0.2);
+}
+
+/* Scrollbar - Firefox */
+.login-panel {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.8) rgba(0,0,0,0.1);
+}
+
+/* Title */
+.login-panel h1 {
+  font-size: 43px;
+  margin-bottom: 36px;
+  color: #000;
+}
+
+/* Input with icons */
+.input-icon {
+  position: relative;
+  width: 100%;
+  margin-bottom: 19px;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1f3d1f;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+.input-icon input {
+  width: 100%;
+  padding: 14px 18px 14px 40px; /* left padding for icon */
+  background: rgba(120, 200, 120, 0.6);
+  border: none;
+  font-size: 19px;
+  outline: none;
+  font-family: "Irish Grover", cursive;
+  border-radius: 7px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  flex-direction: column; 
+  gap: 14px; 
+  margin-top: 10px;
+}
+
+.buttons button {
+  padding: 14px 0; 
+  font-size: 22px;
+  font-family: "Irish Grover", cursive;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 120, 0, 0.6);
+  color: #fff;
+  border-radius: 7px;
+  transition: background 0.2s;
+}
+
+.buttons button:hover {
+  background-color: rgba(0, 120, 0, 0.8);
+}
+
+/* Links */
+.login-panel a {
+  display: block;
+  margin-top: 19px;
+  font-size: 19px;
+  color: #000;
+  text-decoration: none;
+}
+
+.login-panel a:hover {
+  text-decoration: underline;
+}
+
+/* Back link */
+.back {
+  display: none;
+}
+
+/* =========================
+   Mobile responsiveness
+   ========================= */
+@media (max-width: 768px) {
+  .login-panel {
+    padding: 36px 24px;
+  }
+  .login-panel h1 {
+    font-size: 34px;
+    margin-bottom: 29px;
+  }
+  .input-icon input {
+    font-size: 17px;
+    padding: 12px 12px 12px 36px;
+  }
+  .input-icon i {
+    font-size: 16px;
+    left: 10px;
+  }
+  .buttons button {
+    font-size: 17px;
+    padding: 12px 0;
+  }
+  .login-panel a {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-panel {
+    width: 100%;
+    padding: 24px 18px;
+  }
+  .login-panel h1 {
+    font-size: 29px;
+    margin-bottom: 22px;
+  }
+  .input-icon input {
+    font-size: 17px;
+    padding: 12px 12px 12px 32px;
+  }
+  .input-icon i {
+    font-size: 14px;
+    left: 8px;
+  }
+  .buttons button {
+    font-size: 17px;
+    padding: 12px 0;
+  }
+  .login-panel a {
+    font-size: 17px;
+  }
+}
+
