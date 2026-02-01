@@ -1,9 +1,9 @@
 # 🚗 3D Car Parking System
 > 🌍 3D Car Parking Simulation using Three.js and TypeScript
 
-Live - https://3-d-car-parking-system.vercel.app/
-
 A 3D car parking simulation system built using Three.js and TypeScript. This project features realistic parking lot environments, car movement physics, smooth camera controls, and interactive parking challenges. It leverages modern web technologies to provide an immersive 3D experience.
+
+![3D_City_Live](https://github.com/user-attachments/assets/461ac334-a861-4173-baba-8862e2a17b8c)
 
 ###  📥 Installation Steps
 
@@ -21,6 +21,7 @@ Install dependencies
 npm install
 ```
 Start development server
+
 ```bash
 npm run dev
 ```
